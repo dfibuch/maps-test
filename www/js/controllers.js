@@ -6,6 +6,12 @@ angular.module('starter.controllers', [])
     let mapOptions = {
       mapType: plugin.google.maps.MapTypeId.HYBRID
     };
-    window.plugin.google.maps.Map.getMap(mapElement, mapOptions);
+    let map = window.plugin.google.maps.Map.getMap(mapElement, mapOptions);
+    map.one(plugin.google.maps.event.MAP_READY, () => {
+      let mapMesser = new MapMesser(map);
+      for (let i = -80; i < 80; i += 10) {
+        mapMesser.drawAndMoveMarker(i);
+      }
+    });
   });
 });
