@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
     let map = window.plugin.google.maps.Map.getMap(mapElement, mapOptions);
     map.one(plugin.google.maps.event.MAP_READY, () => {
       let mapMesser = new MapMesser(map);
-      for (let i = -80; i < 80; i += 10) {
+      for (let i = -80; i < 80; i += 1) {
         mapMesser.drawAndMoveMarker(i);
       }
     });

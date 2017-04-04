@@ -10,7 +10,7 @@ class MapMesser {
                 () => {
                     newMarker.setPosition({ lat: lat, lng: new Date().getMilliseconds() / 10 });
                 },
-                1);
+                0);
         });
     }
 }
