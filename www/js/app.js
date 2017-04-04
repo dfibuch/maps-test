@@ -45,7 +45,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-map.html',
-        controller: 'MapCtrl'
+        controller: 'MapCtrl',
+        controllerAs: 'ctrl'
       }
     }
   });

@@ -10,7 +10,13 @@ class MapMesser {
                 () => {
                     newMarker.setPosition({ lat: lat, lng: new Date().getMilliseconds() / 10 });
                 },
-                0);
+                1);
+        });
+    }
+
+    addAndRemoveMarker(lat) {
+        let marker = this.map.addMarker({ position: {lat: lat, lng: 0} }, newMarker => {
+            newMarker.remove();
         });
     }
 }
